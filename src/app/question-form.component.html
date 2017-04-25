@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Question Form</h1>
+  <div class="form-group" *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
+    <form>
+      <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)">
+        <label for="question">{{q.title}}</label>
+        <div *ngFor="let opts of q.options" class="radio">
+          <label>
+            <input type="radio" name="{{opts}}" value="{{opts}}" [(ngModel)]="q.selectedOption" /> {{opts}}
+          </label>
+        </div>
+      </div>
+    </form>
+
+    <div  *ngIf="isLast && q.selectedOption">
+      <div class="form-group" *ngFor="let q of model">
+        <label> {{q.title}} : {{q.selectedOption}} </label>
+      </div>
+    </div>
+
+  </div>
+
+</div>
