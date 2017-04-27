@@ -29,9 +29,22 @@
 
           <div *ngFor="let opts of q.options" class="questionResponses">
             <button type="button" class="list-group-item" [ngClass]="{'active': q.selectedOption == opts}" (click)="questionProgress = onAnswer(q, opts, questionProgress, model.length)">
-              {{opts}}
+              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> {{opts}}
             </button>
           </div>
+
+          <div *ngFor="let a of accordions;" class="accordions">
+            <div *ngIf="a.questionID == q.id">
+              <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel title={{a.title}} type="info">
+                  <ng-template ngbPanelContent>
+                    {{a.information}}
+                  </ng-template>
+                </ngb-panel>
+              </ngb-accordion>
+            </div>
+          </div>
+
         </div>
         </div>
     </div>
