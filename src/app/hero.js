@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Hero = (function () {
     function Hero(id, name, power, alterEgo) {
         this.id = id;
