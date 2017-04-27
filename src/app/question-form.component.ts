@@ -19,7 +19,7 @@ import {
       transition(':enter', [
         style({width: "50%", transform: 'translateX(50%)', opacity: 0}),
         group([
-          animate('0.4s 0.2s ease', style({
+          animate('0.5s 0.1s ease', style({
             transform: 'translateX(0)',
             width: "100%"
           })),

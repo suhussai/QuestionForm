@@ -1,23 +1,49 @@
 .questions {
-  background-color: #f7f7f8 !important;
 }
 
-.questions button:hover {
+.questionResponses button:hover {
   background-color: #a574a8 !important;
   color: white;
   box-shadow: inset 0 0 0 5px #53a7ea;
 }
 
-.question button:focus {
+.questionResponses button:focus {
   background-color: #a568a8 !important;
   color: white;
 }
-.question button:focus:hover {
+.questionResponses button:focus:hover {
   background-color: #a568a8 !important;
   color: white;
 }
 
-.backButton {
+.backButton button {
+  color: white;
+  background-color: #a568a8 !important;
+  float: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+.panelTitle {
+  font-size: 18px;
+letter-spacing: 1px;
+font-weight: 900;
+color: #533155;
+font-family: 'Open Sans', sans-serif;
+}
+
+.questionLabel {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #533155;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.backButton button:hover {
+  color: white;
+  background-color: #533155 !important;
   float: right;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -27,6 +53,7 @@
 .active {
   background-color: #a568a8 !important;
   color: white;
+  box-shadow: inset 0 0 0 5px #53a7ea;
 }
 
 .questionResponses {

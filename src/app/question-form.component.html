@@ -3,11 +3,13 @@
   <div class="panel-heading">
     <div class="row">
       <div class="col-md-6">
-        <h1>Question Form</h1>
+        <h1 class="panelTitle">
+          Patient Decision Aid (BETA test)
+        </h1>
       </div>
       <div class="col-md-6">
        <a href="google.ca" class="backButton">
-         <button type="button"> GOOGLE </button>
+         <button type="button" class="btn"> GOOGLE </button>
        </a>
       </div>
     </div>
@@ -21,7 +23,7 @@
         <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)" [@questionState]>
           <div class="panel panel-default">
           <div class="panel-heading">
-            <label for="question">{{q.title}}</label>
+            <label for="question" class="questionLabel">{{index+1}}. {{q.title}}</label>
           </div>
           <div class="panel-body">
 
