@@ -2,9 +2,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h1>Question Form</h1>
-    <a href="google.ca" class="backButton">
-    <button type="button"> GOOGLE </button>
-  </a>
   </div>
   <div class="panel-body">
 
@@ -12,7 +9,7 @@
   <div class="col-md-12">
     <div *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
 
-        <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)">
+        <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)" [@questionState]>
           <div class="panel panel-default">
           <div class="panel-heading">
             <label for="question">{{q.title}}</label>

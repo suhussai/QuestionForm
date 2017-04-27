@@ -12,6 +12,7 @@ import { QuestionFormComponent } from './question-form.component';
   imports:      [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     NgbModule.forRoot(),
   ],
   declarations: [
