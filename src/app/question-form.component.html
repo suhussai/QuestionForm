@@ -1,26 +1,36 @@
-<div class="container">
+<div class="questions container">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Question Form</h1>
+    <a href="google.ca" class="backButton">
+    <button type="button"> GOOGLE </button>
+  </a>
+  </div>
+  <div class="panel-body">
+
 <div class="row">
   <div class="col-md-12">
-    <h1>Question Form</h1>
+    <div *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
 
-    <label for="question">{{model[page - 1].title}}</label>
-    <div *ngFor="let opts of model[page - 1].options">
-      <button type="button" class="list-group-item btn-outline-primary" [ngClass]="{'active': model[page - 1].selectedOption == opts}" (click)="questionProgress = onAnswer(model[page - 1], opts, questionProgress, model.length)">
-        {{opts}}
-      </button>
+        <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <label for="question">{{q.title}}</label>
+          </div>
+          <div class="panel-body">
+
+          <div *ngFor="let opts of q.options" class="questionResponses">
+            <button type="button" class="list-group-item" [ngClass]="{'active': q.selectedOption == opts}" (click)="questionProgress = onAnswer(q, opts, questionProgress, model.length)">
+              {{opts}}
+            </button>
+          </div>
+        </div>
+        </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
-    <ngb-pagination class="pull-left" [collectionSize]="model.length" [(page)]="page" aria-label="Default pagination" [pageSize]="1"></ngb-pagination>
-    <br>
-    &nbsp; &nbsp;
-    <button type="button" class="btn btn-success" (click)="showResults = true">Submit</button>
-  </div>
-  <div class="col-md-8">
-  </div>
 </div>
+
 <div class="row">
   <div class="col-md-12">
     <p><ngb-progressbar type="success" [showValue]="true" [value]="questionProgress" [striped]="true" [animated]="true"></ngb-progressbar></p>
@@ -28,7 +38,7 @@
 </div>
 <div class="row">
 
-  <div class="text-center">
+  <div class="col-md-12 text-center">
     <div  *ngIf="showResults">
       <div *ngFor="let q of model">
         <label> {{q.title}} : {{q.selectedOption}} </label>
@@ -36,6 +46,9 @@
     </div>
   </div>
 
+</div>
+
+</div>
 </div>
 
 </div>

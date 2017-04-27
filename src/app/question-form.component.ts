@@ -4,7 +4,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'question-form',
-  templateUrl: './question-form.component.html'
+  templateUrl: './question-form.component.html',
+  styleUrls: ['./question-form.component.css']
 })
 export class QuestionFormComponent {
 
@@ -30,6 +31,7 @@ export class QuestionFormComponent {
 ];
 page = 1;
 questionProgress = 0;
+maxPages = this.model.length;
 
   submitted = false;
 
@@ -45,5 +47,4 @@ questionProgress = 0;
     question.selectedOption = answer;
     return questionProgress;
   }
-
 }
