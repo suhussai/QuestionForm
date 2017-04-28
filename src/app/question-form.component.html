@@ -1,80 +1,75 @@
 <div class="questions container">
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="row">
-      <div class="col-md-6">
-        <h1 class="panelTitle">
-          Patient Decision Aid (BETA test)
-        </h1>
-      </div>
-      <div class="col-md-6">
-       <a href="google.ca" class="backButton">
-         <button type="button" class="btn"> GOOGLE </button>
-       </a>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="panelTitle">
+            Patient Decision Aid (BETA test)
+          </h1>
+        </div>
+        <div class="col-md-6">
+          <a href="http://ckmcare.com/NodeResources/AlgorithmView?resourceId=210#uni152" class="backButton">
+            <button type="button" class="btn"> Back </button>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="panel-body">
-
-<div class="row">
-  <div class="col-md-12">
-    <div *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
-
-        <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)" [@questionState]>
-          <div class="panel panel-default">
-          <div class="panel-heading">
-            <label for="question" class="questionLabel">{{index+1}}. {{q.title}}</label>
-          </div>
-          <div class="panel-body">
-
-          <div *ngFor="let opts of q.options" class="questionResponses">
-            <button type="button" class="list-group-item" [ngClass]="{'active': q.selectedOption == opts}" (click)="questionProgress = onAnswer(q, opts, questionProgress, model.length)">
-              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> {{opts}}
-            </button>
-          </div>
-
-          <div *ngFor="let a of accordions;">
-            <div *ngIf="a.questionID == q.id">
-              <ngb-accordion #acc="ngbAccordion">
-                <ngb-panel>
-                  <ng-template ngbPanelTitle>
-                    <div class="accordionsTitle">
-                    {{a.title}}
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
+            <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)" [@questionState]>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <label for="question" class="questionLabel">{{index+1}}. {{q.title}}</label>
+                </div>
+                <div class="panel-body">
+                  <div *ngFor="let opts of q.options" class="questionResponses">
+                    <button type="button" class="list-group-item" [ngClass]="{'active': q.selectedOption == opts}" (click)="questionProgress = onAnswer(q, opts, questionProgress, model.length)">
+                      <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> {{opts}}
+                    </button>
                   </div>
-                  </ng-template>
-                  <ng-template ngbPanelContent>
-                    {{a.information}}
-                  </ng-template>
-                </ngb-panel>
-              </ngb-accordion>
+                  <div *ngFor="let a of accordions;">
+                    <div *ngIf="a.questionID == q.id">
+                      <ngb-accordion #acc="ngbAccordion">
+                        <ngb-panel>
+                          <ng-template ngbPanelTitle>
+                            <div class="accordionsTitle">
+                              {{a.title}}
+                            </div>
+                          </ng-template>
+                          <ng-template ngbPanelContent>
+                            {{a.information}}
+                          </ng-template>
+                        </ngb-panel>
+                      </ngb-accordion>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p><ngb-progressbar type="success" [value]="questionProgress" [striped]="true" [animated]="true"></ngb-progressbar></p>
         </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <p><ngb-progressbar type="success" [value]="questionProgress" [striped]="true" [animated]="true"></ngb-progressbar></p>
-  </div>
-</div>
-<div class="row">
-
-  <div class="col-md-12 text-center">
-    <div  *ngIf="showResults">
-      <div *ngFor="let q of model">
-        <label> {{q.title}} : {{q.selectedOption}} </label>
+      </div>
+      <div class="row" *ngIf="questionProgress >= 99.9999">
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-success" (click)="showResults = true"> Submit </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div  *ngIf="showResults">
+            <div *ngFor="let q of model">
+              <label> {{q.title}} : {{q.selectedOption}} </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-</div>
-
-</div>
-</div>
-
 </div>
