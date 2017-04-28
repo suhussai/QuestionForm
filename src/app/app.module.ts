@@ -20,6 +20,7 @@ import { QuestionFormComponent } from './question-form.component';
     AppComponent,
     HeroFormComponent,
     QuestionFormComponent,
+    HeroDetailComponent,
    ],
   bootstrap:    [ AppComponent ]
 })
