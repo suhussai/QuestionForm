@@ -6,6 +6,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { HeroFormComponent } from './hero-form.component';
+import { HeroDetailComponent } from './hero-detail.component';
 import { QuestionFormComponent } from './question-form.component';
 
 @NgModule({
