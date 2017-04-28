@@ -33,10 +33,15 @@
             </button>
           </div>
 
-          <div *ngFor="let a of accordions;" class="accordions">
+          <div *ngFor="let a of accordions;">
             <div *ngIf="a.questionID == q.id">
               <ngb-accordion #acc="ngbAccordion">
-                <ngb-panel title={{a.title}} type="info">
+                <ngb-panel>
+                  <ng-template ngbPanelTitle>
+                    <div class="accordionsTitle">
+                    {{a.title}}
+                  </div>
+                  </ng-template>
                   <ng-template ngbPanelContent>
                     {{a.information}}
                   </ng-template>

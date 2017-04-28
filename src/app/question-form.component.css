@@ -60,7 +60,7 @@ font-family: 'Open Sans', sans-serif;
   padding-bottom: 5px;
 }
 
-.accordions .card-header {
+.accordionsTitle {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 900;
