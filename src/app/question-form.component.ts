@@ -102,7 +102,7 @@ export class QuestionFormComponent {
 page = 1;
 questionProgress = 0;
 maxPages = this.model.length;
-
+showResults = false;
   submitted = false;
 
   onSubmit() { this.submitted = true; }
