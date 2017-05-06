@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Question }    from './question';
 import { AccordionContent } from './accordionContent';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+declare let pdfMake: any;
 import {
   trigger,
   state,
@@ -116,6 +117,15 @@ showResults = false;
     }
     question.selectedOption = answer;
     return questionProgress;
+  }
+
+  onSubmitForm() {
+    var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+    const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+    pdfDocGenerator.getDataUrl((dataUrl: string) => {
+      const iframe = document.getElementById('pdfViewer');
+      iframe.setAttribute("src", dataUrl);
+    });
   }
 
 
