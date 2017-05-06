@@ -105,6 +105,7 @@ questionProgress = 0;
 maxPages = this.model.length;
 showResults = false;
   submitted = false;
+  pdfDocGenerator = pdfMake;
 
   onSubmit() { this.submitted = true; }
 
@@ -120,12 +121,21 @@ showResults = false;
   }
 
   onSubmitForm() {
-    var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
-    const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-    pdfDocGenerator.getDataUrl((dataUrl: string) => {
+    this.showResults = true;
+    var content = "";
+    this.model.forEach(function (m) {
+      content += `Question: ${m.title} Answer: ${m.selectedOption}\n`;
+    });
+    var docDefinition = { content: content };
+    this.pdfDocGenerator = pdfMake.createPdf(docDefinition);
+    this.pdfDocGenerator.getDataUrl((dataUrl: string) => {
       const iframe = document.getElementById('pdfViewer');
       iframe.setAttribute("src", dataUrl);
     });
+  }
+
+  downloadPDF() {
+    this.pdfDocGenerator.download();
   }
 
 
