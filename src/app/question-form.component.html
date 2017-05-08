@@ -20,8 +20,8 @@
           <div *ngFor="let q of model; let isFirst = first; let index = index; let isLast = last">
             <div *ngIf="isFirst || (index > 0 && model[index - 1].selectedOption)" [@questionState]>
               <div class="panel panel-default">
-                <div class="panel-heading">
-                  <label for="question" class="questionLabel">{{index+1}}. {{q.title}}</label>
+                <div class="panel-heading innerPanelLabel">
+                  {{index+1}}. {{q.title}}
                 </div>
                 <div class="panel-body">
                   <div *ngFor="let opts of q.options" class="questionResponses">
@@ -59,7 +59,7 @@
       <div class="row" *ngIf="questionProgress >= 99.9999">
         <div class="col-md-12 text-center">
           <button type="button" class="btn btn-success" (click)="onSubmitForm()"> Submit </button>
-          <button type="button" class="btn btn-success" (click)="downloadPDF()"> Download </button>
+          <button *ngIf="showResults" type="button" class="btn btn-success" (click)="downloadPDF()"> Download </button>
         </div>
       </div>
       <div class="row">
@@ -68,6 +68,24 @@
             <div class="iframeContainer">
               <iframe id="pdfViewer">
               </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading innerPanelLabel">
+              Additional Considerations
+            </div>
+            <div class="panel-body">
+              <p class=""><strong><em> <i>
+                Your personal feelings are just as important as the medical facts. You can use the following section to think about what else matters to you in this decision, and record how you feel about the following statements.
+              </i> </em> </strong>
+              </p>
+              <p class="additionalQuestion"> Write! </p>
+              <textarea class="form-control" rows="3"></textarea>
+
             </div>
           </div>
         </div>
