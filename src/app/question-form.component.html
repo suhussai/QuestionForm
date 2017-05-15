@@ -24,7 +24,7 @@
                   {{index+1}}. {{q.title}}
                 </div>
                 <div class="panel-body">
-                  <div *ngFor="let opts of q.options" class="questionResponses">
+                  <div *ngFor="let opts of getValues(q.options)" class="questionResponses">
                     <button type="button" class="list-group-item" [ngClass]="{'active': q.selectedOption == opts}" (click)="questionProgress = onAnswer(q, opts, questionProgress, model.length)">
                       <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> {{opts}}
                     </button>

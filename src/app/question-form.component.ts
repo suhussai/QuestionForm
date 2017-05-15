@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Question }    from './question';
 import { AccordionContent } from './accordionContent';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Interpreter } from './interpreter';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 declare let pdfMake: any;
 import {
   trigger,
@@ -39,58 +40,58 @@ import {
 
 export class QuestionFormComponent {
   model = [
-    new Question(1, "How old are you?", [
-      "Under 60 years old",
-      "60 - 69 years old",
-      "70 - 79 years old",
-      "80 years old or older",
-    ]),
-    new Question(2, "Do you live in a nursing home or other long-term care facility?", [
-      "Yes",
-      "No",
-    ]),
-    new Question(3, "Do you suffer from dementia or cognitive impairment?", [
-      "Yes",
-      "No",
-    ]),
-    new Question(4, "How would you describe your health this week?", [
-      "I am able to care for most of my own needs but I might need occasional assistance.",
-      "I need quite a bit of assistance and I might need frequent medical care.",
-      "I spend much of my time in bed or lying down.",
-    ]),
-    new Question(5, "Are you suffering from other chronic diseases or conditions?", [
-      "Few other health problems.",
-      "Heart disease.",
-      "Many other health problems (with or without heart disease).",
-    ]),
-    new Question(6, "How important is it for you to avoid being hospitalized?", [
-      "Very important.",
-      "Somewhat important.",
-      "Unsure",
-      "Somewhat unimportant",
-      "Unimportant",
-    ]),
-    new Question(7, "How important is it for you to avoid having major or minor surgery?", [
-      "Very important.",
-      "Somewhat important.",
-      "Unsure",
-      "Somewhat unimportant",
-      "Unimportant",
-    ]),
-    new Question(8, "How important is it for you to avoid traveling for dialysis or clinic visits?", [
-      "Very important.",
-      "Somewhat important.",
-      "Unsure",
-      "Somewhat unimportant",
-      "Unimportant",
-    ]),
-    new Question(9, "How important is it for you to have control over what you do with your time?", [
-      "Very important.",
-      "Somewhat important.",
-      "Unsure",
-      "Somewhat unimportant",
-      "Unimportant",
-    ])
+    new Question(1, "How old are you?", {
+      1: "Under 60 years old",
+      2: "60 - 69 years old",
+      3: "70 - 79 years old",
+      4: "80 years old or older",
+    }),
+/*    new Question(2, "Do you live in a nursing home or other long-term care facility?", {
+      1: "Yes",
+      2: "No",
+    }),
+    new Question(3, "Do you suffer from dementia or cognitive impairment?", {
+      1: "Yes",
+      2: "No",
+    }),
+    new Question(4, "How would you describe your health this week?", {
+      1: "I am able to care for most of my own needs but I might need occasional assistance.",
+      2: "I need quite a bit of assistance and I might need frequent medical care.",
+      3: "I spend much of my time in bed or lying down.",
+    }),
+    new Question(5, "Are you suffering from other chronic diseases or conditions?", {
+      1: "Few other health problems.",
+      2: "Heart disease.",
+      3: "Many other health problems (with or without heart disease).",
+    }),
+    new Question(6, "How important is it for you to avoid being hospitalized?", {
+      1: "Very important.",
+      2: "Somewhat important.",
+      3: "Unsure",
+      4: "Somewhat unimportant",
+      5: "Unimportant",
+    }),
+    new Question(7, "How important is it for you to avoid having major or minor surgery?", {
+      1: "Very important.",
+      2: "Somewhat important.",
+      3: "Unsure",
+      4: "Somewhat unimportant",
+      5: "Unimportant",
+    }),
+    new Question(8, "How important is it for you to avoid traveling for dialysis or clinic visits?", {
+      1: "Very important.",
+      2: "Somewhat important.",
+      3: "Unsure",
+      4: "Somewhat unimportant",
+      5: "Unimportant",
+    }),
+    new Question(9, "How important is it for you to have control over what you do with your time?", {
+      1: "Very important.",
+      2: "Somewhat important.",
+      3: "Unsure",
+      4: "Somewhat unimportant",
+      5: "Unimportant",
+    }) */
   ];
 
   accordions = [
@@ -115,16 +116,17 @@ export class QuestionFormComponent {
     if (question.selectedOption == "") {
       questionProgress = questionProgress + 1 / modelLength * 100;
     }
+    if (question.selectedOption != "" && questionProgress >= 99.9999) {
+      this.showResults = false;
+    }
     question.selectedOption = answer;
     return questionProgress;
   }
 
   onSubmitForm() {
     this.showResults = true;
-    var content = "";
-    this.model.forEach(function (m) {
-      content += `Question: ${m.title} Answer: ${m.selectedOption}\n`;
-    });
+    var i = new Interpreter(this.model);
+    var content = i.interpret();
     var docDefinition = { content: content };
     this.pdfDocGenerator = pdfMake.createPdf(docDefinition);
     this.pdfDocGenerator.getDataUrl((dataUrl: string) => {
@@ -135,5 +137,13 @@ export class QuestionFormComponent {
 
   downloadPDF() {
     this.pdfDocGenerator.download();
+  }
+
+  getValues(options: {}) {
+    var vals = Array();
+    Object.keys(options).forEach(function(k) {
+      vals.push(options[k]);
+    });
+    return vals;
   }
 }
