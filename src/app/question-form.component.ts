@@ -112,8 +112,8 @@ showResults = false;
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
 
-  onAnswer(question: Question, answer: number, questionProgress: number, modelLength: number): number {
-    if (question.selectedOption == 0) {
+  onAnswer(question: Question, answer: string, questionProgress: number, modelLength: number): number {
+    if (question.selectedOption == "") {
       questionProgress = questionProgress + 1 / modelLength * 100;
     }
     question.selectedOption = answer;
