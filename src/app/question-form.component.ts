@@ -38,7 +38,6 @@ import {
 })
 
 export class QuestionFormComponent {
-
   model = [
     new Question(1, "How old are you?", [
       "Under 60 years old",
@@ -92,7 +91,7 @@ export class QuestionFormComponent {
       "Somewhat unimportant",
       "Unimportant",
     ])
-];
+  ];
 
   accordions = [
     new AccordionContent(2, "More Information", "Picture"),
@@ -100,10 +99,10 @@ export class QuestionFormComponent {
     new AccordionContent(4, "More Information", "The people who do best with dialysis are people who are functionally independent. If you spend much of your time in bed, or if you find you need help with day-to-day chores like dressing and bathing, dialysis probably will not help you much, if at all."),
     new AccordionContent(7, "What is surgery?", "Surgery is a procedure to diagnose or treat a medical problem.  It involves the use of instruments and cutting of body tissues."),
   ];
-page = 1;
-questionProgress = 0;
-maxPages = this.model.length;
-showResults = false;
+  page = 1;
+  questionProgress = 0;
+  maxPages = this.model.length;
+  showResults = false;
   submitted = false;
   pdfDocGenerator = pdfMake;
 
@@ -137,6 +136,4 @@ showResults = false;
   downloadPDF() {
     this.pdfDocGenerator.download();
   }
-
-
 }
