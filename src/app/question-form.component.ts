@@ -126,8 +126,7 @@ export class QuestionFormComponent {
   onSubmitForm() {
     this.showResults = true;
     var i = new Interpreter(this.model);
-    var content = i.interpret();
-    var docDefinition = { content: content };
+    var docDefinition = i.interpret();
     this.pdfDocGenerator = pdfMake.createPdf(docDefinition);
     this.pdfDocGenerator.getDataUrl((dataUrl: string) => {
       const iframe = document.getElementById('pdfViewer');
