@@ -1,10 +1,10 @@
 export class Question {
-  public selectedOption: number;
+  public selectedOption: string;
   constructor(
     public id: number,
     public title: string,
-    public options: Array<string>,
+    public options: {},
   ) {
-    this.selectedOption = 0;
+    this.selectedOption = "";
   }
 }
