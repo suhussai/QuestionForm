@@ -1,4 +1,5 @@
 import { Question }    from './question';
+import { nursingImage } from './nursingImage';
 export class Interpreter {
   constructor(
     public questions: Array<Question>,
@@ -46,40 +47,88 @@ export class Interpreter {
       }
     };
 
-    var progrnosisTable = {};
+    var progrnosisTable = {
+      style: 'tableExample',
+      table: {
+        body: [
+          ['', 'Conservative Kidney Management (CKM) No dialysis or transplant', 'Dialysis'],
+          [
+            {
+              text: 'Quality of Life'
+            },
+            {
+              text: "Quality of life is anticipated to remain stable until the last 1-2 months of life. At that time you are likely to feel more weak and may lose interest in the details of daily life."
+            },
+            {
+              text: "Dialysis is not likely to make you feel better. The side effects and burden of dialysis may even lower your quality of life."
+            }
+          ],
+          [
+            {text: "Symptoms"},
+            {text: "Symptoms are common with kidney failure.  The severity of symptoms tend to remain stable with CKM until the last month of life when they may increase. These symptoms can be treated and aggressive symptom management will be a part of your CKM care."},
+            {text: "Symptoms are common with kidney failure. The severity of symptoms will likely not improve with dialysis. The dialysis procedure may cause or worsen some symptoms such as muscle cramping and fatigue."},
+          ],
+          [
+            {text: "Function"},
+            {text: "Your level of physical function will likely be relatively stable until the last 1-2 months of life."},
+            {text: "People in a nursing home or with poor physical function do poorly on dialysis and can lose physical function rapidly after starting dialysis. Only 13% of people living in a nursing home maintain their level of function after 1 year on dialysis."},
+          ],
+          [
+            {text: "Survival", fillColor: '#eeeeee'},
+            {text: "Your life span will likely be the same with CKM than with dialysis. Some people like you may actually live longer with CKM, especially if your kidney function is quite stable."},
+            {
+              stack: [
+                "Dialysis is unlikely to keep you alive longer than if you had CKM. Dialysis may actually hasten death.",
+                {
+                  image: 'nursingHomeStats',
+                  width: 150,
+                },
+                "Estimated probability of dying within 6 months after starting dialysis:16%* *Note: calculated from nearly 70,000 kidney failure patients age 67 years or older who started dialysis"
+              ]
+            },
+        ],
+      ]
+    }
+  };
 
-    content.push({text: "PDA Results", style: "header"});
-    content.push({text: "My Treatment Options", style: "subHeader"});
-    content.push(treatmentOptionsTable);
+  content.push({text: "PDA Results", style: "header"});
+  content.push({text: "My Treatment Options", style: "subHeader"});
+  content.push(treatmentOptionsTable);
+  content.push({text: "My Prognosis", style: "subHeader"});
+  content.push(progrnosisTable);
 
 
-    this.questions.forEach(function (m) {
-      content.push(`Question: ${m.title} Answer: ${m.selectedOption}\n`);
-    });
+  this.questions.forEach(function (m) {
+    content.push(`Question: ${m.title} Answer: ${m.selectedOption}\n`);
+  });
 
-    content.push();
+  content.push();
 
-    var styles = {
-      header: {
-        fontSize: 18,
-        bold: true,
-        margin: [0, 0, 0, 10]
-      },
-      subHeader: {
-        fontSize: 16,
-        bold: true,
-        margin: [0, 10, 0, 5]
-      },
-      tableExample: {
-        margin: [0, 5, 0, 15]
-      },
-      tableHeader: {
-        bold: true,
-        fontSize: 13,
-        color: 'black'
-      }
-    };
+  var styles = {
+    header: {
+      fontSize: 18,
+      bold: true,
+      margin: [0, 0, 0, 10]
+    },
+    subHeader: {
+      fontSize: 16,
+      bold: true,
+      margin: [0, 10, 0, 5]
+    },
+    tableExample: {
+      margin: [0, 5, 0, 15]
+    },
+    tableHeader: {
+      bold: true,
+      fontSize: 13,
+      color: 'black'
+    }
+  };
 
-    return {content: content, styles: styles};
-  }
+  var images = {
+    nursingHomeStats: nursingImage
+  };
+
+  return {content: content, styles: styles, images: images};
+}
 }
