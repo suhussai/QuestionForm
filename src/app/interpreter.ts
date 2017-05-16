@@ -86,49 +86,54 @@ export class Interpreter {
                 "Estimated probability of dying within 6 months after starting dialysis:16%* *Note: calculated from nearly 70,000 kidney failure patients age 67 years or older who started dialysis"
               ]
             },
-        ],
-      ]
-    }
-  };
+          ],
+        ]
+      }
+    };
 
-  content.push({text: "PDA Results", style: "header"});
-  content.push({text: "My Treatment Options", style: "subHeader"});
-  content.push(treatmentOptionsTable);
-  content.push({text: "My Prognosis", style: "subHeader"});
-  content.push(progrnosisTable);
+    content.push({text: "PDA Results", style: "header"});
+    content.push({text: "My Treatment Options", style: "subHeader"});
+    content.push(treatmentOptionsTable);
+    content.push({text: "My Prognosis", style: "subHeader"});
+    content.push(progrnosisTable);
+    content.push(
+      {
+        image: 'nursingHomeStats',
+      }
+    );
 
 
-  this.questions.forEach(function (m) {
-    content.push(`Question: ${m.title} Answer: ${m.selectedOption}\n`);
-  });
+    this.questions.forEach(function (m) {
+      content.push(`Question: ${m.title} Answer: ${m.selectedOption}\n`);
+    });
 
-  content.push();
+    content.push();
 
-  var styles = {
-    header: {
-      fontSize: 18,
-      bold: true,
-      margin: [0, 0, 0, 10]
-    },
-    subHeader: {
-      fontSize: 16,
-      bold: true,
-      margin: [0, 10, 0, 5]
-    },
-    tableExample: {
-      margin: [0, 5, 0, 15]
-    },
-    tableHeader: {
-      bold: true,
-      fontSize: 13,
-      color: 'black'
-    }
-  };
+    var styles = {
+      header: {
+        fontSize: 18,
+        bold: true,
+        margin: [0, 0, 0, 10]
+      },
+      subHeader: {
+        fontSize: 16,
+        bold: true,
+        margin: [0, 10, 0, 5]
+      },
+      tableExample: {
+        margin: [0, 5, 0, 15]
+      },
+      tableHeader: {
+        bold: true,
+        fontSize: 13,
+        color: 'black'
+      }
+    };
 
-  var images = {
-    nursingHomeStats: nursingImage
-  };
+    var images = {
+      nursingHomeStats: nursingImage
+    };
 
-  return {content: content, styles: styles, images: images};
-}
+    return {content: content, styles: styles, images: images};
+  }
 }
