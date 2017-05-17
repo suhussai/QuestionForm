@@ -4,6 +4,7 @@ import { AccordionContent } from './accordionContent';
 import { Interpreter } from './interpreter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 declare let pdfMake: any;
+declare let html2canvas: any;
 import {
   trigger,
   state,
@@ -132,10 +133,23 @@ export class QuestionFormComponent {
       const iframe = document.getElementById('pdfViewer');
       iframe.setAttribute("src", dataUrl);
     });
+
   }
 
   downloadPDF() {
-    this.pdfDocGenerator.download();
+    html2canvas(document.getElementById('exportthis'), {
+            onrendered: function (canvas : any) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500,
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("Score_Details.pdf");
+            }
+        });
+//    this.pdfDocGenerator.download();
   }
 
   getValues(options: {}) {

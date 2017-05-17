@@ -1,6 +1,11 @@
 .questions {
 }
 
+.tableHead {
+  background-color: #533155;
+  color: white;
+}
+
 .questionResponses {
   font-weight: 500;
 }
@@ -31,9 +36,9 @@
 
 .panelTitle {
   font-size: 18px;
-letter-spacing: 1px;
-font-weight: 900;
-color: #533155;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #533155;
 }
 
 body {
@@ -48,7 +53,7 @@ body {
 }
 
 .heading {
-  
+
 }
 
 .innerPanelLabel {
