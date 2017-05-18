@@ -47,7 +47,7 @@ export class QuestionFormComponent {
       3: "70 - 79 years old",
       4: "80 years old or older",
     }),
-/*    new Question(2, "Do you live in a nursing home or other long-term care facility?", {
+    new Question(2, "Do you live in a nursing home or other long-term care facility?", {
       1: "Yes",
       2: "No",
     }),
@@ -92,7 +92,7 @@ export class QuestionFormComponent {
       3: "Unsure",
       4: "Somewhat unimportant",
       5: "Unimportant",
-    }) */
+    })
   ];
 
   accordions = [
@@ -106,7 +106,6 @@ export class QuestionFormComponent {
   maxPages = this.model.length;
   showResults = false;
   submitted = false;
-  pdfDocGenerator = pdfMake;
 
   onSubmit() { this.submitted = true; }
 
@@ -126,30 +125,26 @@ export class QuestionFormComponent {
 
   onSubmitForm() {
     this.showResults = true;
-    var i = new Interpreter(this.model);
-    var docDefinition = i.interpret();
-    this.pdfDocGenerator = pdfMake.createPdf(docDefinition);
-    this.pdfDocGenerator.getDataUrl((dataUrl: string) => {
-      const iframe = document.getElementById('pdfViewer');
-      iframe.setAttribute("src", dataUrl);
-    });
-
   }
 
   downloadPDF() {
+    var loadingButton = <HTMLInputElement> document.getElementById('loadingButton');
+    loadingButton.disabled = true;
+    loadingButton.innerHTML = "Loading...";
     html2canvas(document.getElementById('exportthis'), {
-            onrendered: function (canvas : any) {
-                var data = canvas.toDataURL();
-                var docDefinition = {
-                    content: [{
-                        image: data,
-                        width: 500,
-                    }]
-                };
-                pdfMake.createPdf(docDefinition).download("Score_Details.pdf");
-            }
-        });
-//    this.pdfDocGenerator.download();
+      onrendered: function (canvas : any) {
+        var data = canvas.toDataURL();
+        var docDefinition = {
+          content: [{
+            image: data,
+            width: 500,
+          }]
+        };
+        pdfMake.createPdf(docDefinition).download("Score_Details.pdf");
+        loadingButton.disabled = false;
+        loadingButton.innerHTML = "Download";
+      }
+    });
   }
 
   getValues(options: {}) {
