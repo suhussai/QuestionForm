@@ -47,7 +47,7 @@ export class QuestionFormComponent {
       3: "70 - 79 years old",
       4: "80 years old or older",
     }),
-    new Question(2, "Do you live in a nursing home or other long-term care facility?", {
+/*    new Question(2, "Do you live in a nursing home or other long-term care facility?", {
       1: "Yes",
       2: "No",
     }),
@@ -92,7 +92,7 @@ export class QuestionFormComponent {
       3: "Unsure",
       4: "Somewhat unimportant",
       5: "Unimportant",
-    })
+    }) */
   ];
 
   accordions = [
