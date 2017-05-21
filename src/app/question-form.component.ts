@@ -106,6 +106,7 @@ export class QuestionFormComponent {
   maxPages = this.model.length;
   showResults = false;
   submitted = false;
+  busy: Promise<any>;
 
   onSubmit() { this.submitted = true; }
 
@@ -138,7 +139,7 @@ export class QuestionFormComponent {
       );
     });
 
-    Promise.all(domsToPicify).then(values => {
+    this.busy = Promise.all(domsToPicify).then(values => {
       var content = new Array();
       values.forEach(function(data) {
         content.push({
