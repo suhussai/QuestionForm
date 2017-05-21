@@ -66,199 +66,188 @@
         <div class="col-md-12">
           <div  *ngIf="showResults">
             <div name="exportthis">
-              <div class="">
-                <h1 class="panelTitle">
-                  Patient Decision Aid Summary
-                </h1>
-                <p>
-                  Here is a summary of your treatment options based on your responses. This tool is not intended as medical advice or to suggest treatment. However, you can use it to talk with your healthcare team or loved ones about your decision.
+              <h1 class="panelTitle">
+                Patient Decision Aid Summary
+              </h1>
+              <p>
+                Here is a summary of your treatment options based on your responses. This tool is not intended as medical advice or to suggest treatment. However, you can use it to talk with your healthcare team or loved ones about your decision.
+              </p>
+              <div class="table-responsive" id="treatmentOptionsDiv">
+                <p class="tableHeader">
+                  My Treatment Options
                 </p>
-                <div class="">
-                  <div class="table-responsive" id="treatmentOptionsDiv">
-                    <p class="tableHeader">
-                      My Treatment Options
-                    </p>
-                    <table class="table table-condensed table-bordered">
-                      <thead class="tableHead">
-                        <tr>
-                          <th scope="col">
-                            &nbsp;
-                          </th>
-                          <th scope="col">
-                            <strong>
-                              Conservative Kidney Management (CKM)
-                            </strong>
-                            <br>No dialysis or transplant
-                          </th>
-                          <th rowspan="1" colspan="2" scope="col">
-                            Dialysis
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td rowspan="2" colspan="1">
-                            <strong>
-                              How does this treatment work?
-                            </strong>
-                          </td>
-                          <td rowspan="2" colspan="1">
-                            CKM is a treatment option for managing kidney failure. It involves:
-                            <ul>
-                              <li>
-                                Treating symptoms
-                              </li>
-                              <li>
-                                Preventing or managing problems.
-                              </li>
-                              <li>
-                                Protecting remaining kidney function.
-                              </li>
-                              <li>
-                                Psychosocial care.
-                              </li>
-                              <li>
-                                Helping plan for the future.
-                              </li>
-                            </ul>
-                            CKM does <em> <strong>not</strong> </em> include dialysis, but it does include all of the other parts of kidney care.&nbsp;The goal of CKM is to live well without dialysis.&nbsp;To learn more about CKM click <a target="_blank" href="http://ckmcare.com/Resources/Details/108">here</a>.
-                          </td>
-                          <td rowspan="1" colspan="2">
-                            Dialysis is a medical treatment that does some of the kidneys’ work to remove toxins and water from your body. It will not cure kidney disease or stop kidneys from getting worse. Dialysis will not treat other medical problems like diabetes or heart conditions. It requires a great deal of time and effort. Patients’ experiences vary widely. In general, the healthier you are, the more likely you are to find it helpful. There are two main types of dialysis. To learn more about dialysis and to see how it actually works, click <a target="_blank" href="http://www.youtube.com/watch?v=mi34xCfmLhw">here</a>.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong><u>Peritoneal dialysis</u> </strong><br>This type of dialysis happens inside your body and uses the lining of your belly to remove toxins and water. Clean fluid goes in your belly through a tube and fluid with toxins is flushed out. You can do this at home.
-                          </td>
-                          <td>
-                            <u><strong>Hemodialysis</strong> </u><br>This type of dialysis happens outside your body. A machine filters your blood and then returns it to your body. Hemodialysis is usually done in a dialysis unit in a clinic or hospital. Some patients can do it at home.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Can I change from one treatment to another?</strong>
-                          </td>
-                          <td>
-                            You can change your mind. All options may still be possible.
-                          </td>
-                          <td rowspan="1" colspan="2">
-                            You can change your mind. All options may still be possible.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                <table class="table table-condensed table-bordered">
+                  <thead class="tableHead">
+                    <tr>
+                      <th scope="col">
+                        &nbsp;
+                      </th>
+                      <th scope="col">
+                        <strong>
+                          Conservative Kidney Management (CKM)
+                        </strong>
+                        <br>No dialysis or transplant
+                      </th>
+                      <th rowspan="1" colspan="2" scope="col">
+                        Dialysis
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" colspan="1">
+                        <strong>
+                          How does this treatment work?
+                        </strong>
+                      </td>
+                      <td rowspan="2" colspan="1">
+                        CKM is a treatment option for managing kidney failure. It involves:
+                        <ul>
+                          <li>
+                            Treating symptoms
+                          </li>
+                          <li>
+                            Preventing or managing problems.
+                          </li>
+                          <li>
+                            Protecting remaining kidney function.
+                          </li>
+                          <li>
+                            Psychosocial care.
+                          </li>
+                          <li>
+                            Helping plan for the future.
+                          </li>
+                        </ul>
+                        CKM does <em> <strong>not</strong> </em> include dialysis, but it does include all of the other parts of kidney care.&nbsp;The goal of CKM is to live well without dialysis.&nbsp;To learn more about CKM click <a target="_blank" href="http://ckmcare.com/Resources/Details/108">here</a>.
+                      </td>
+                      <td rowspan="1" colspan="2">
+                        Dialysis is a medical treatment that does some of the kidneys’ work to remove toxins and water from your body. It will not cure kidney disease or stop kidneys from getting worse. Dialysis will not treat other medical problems like diabetes or heart conditions. It requires a great deal of time and effort. Patients’ experiences vary widely. In general, the healthier you are, the more likely you are to find it helpful. There are two main types of dialysis. To learn more about dialysis and to see how it actually works, click <a target="_blank" href="http://www.youtube.com/watch?v=mi34xCfmLhw">here</a>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong><u>Peritoneal dialysis</u> </strong><br>This type of dialysis happens inside your body and uses the lining of your belly to remove toxins and water. Clean fluid goes in your belly through a tube and fluid with toxins is flushed out. You can do this at home.
+                      </td>
+                      <td>
+                        <u><strong>Hemodialysis</strong> </u><br>This type of dialysis happens outside your body. A machine filters your blood and then returns it to your body. Hemodialysis is usually done in a dialysis unit in a clinic or hospital. Some patients can do it at home.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Can I change from one treatment to another?</strong>
+                      </td>
+                      <td>
+                        You can change your mind. All options may still be possible.
+                      </td>
+                      <td rowspan="1" colspan="2">
+                        You can change your mind. All options may still be possible.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-
-                  <div name="exportthis">
-                  <div class="">
-                    <div class="innerPanelLabel">
-                    </div>
-                    <div class="">
-                  <div class="table-responsive" id="myPrognosisDiv">
-                    <p class="tableHeader">
-                      My Prognosis:
-                    </p>
-                    <p>
-                      <em>
-                        How long you live and how you will feel is based on your age and overall health as indicated on the survey:
-                      </em>
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-condensed" style="width: 100%;">
-                        <thead>
-                          <tr>
-                            <th style="" scope="col">
-                              &nbsp;
-                            </th>
-                            <th style="" scope="col">
-                              <strong>
-                                Conservative Kidney Management (CKM)
-                              </strong>
-                              <br>
-                              No dialysis or transplant
-                            </th>
-                            <th style="" scope="col">
-                              <strong>
-                                Dialysis
-                              </strong>
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td style="">
-                              <strong>
-                                Quality of Life
-                              </strong>
-                            </td>
-                            <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
-                              Quality of life is anticipated to remain stable until the last 1-2 months of life. At that time you are likely to feel more weak and may lose interest in the details of daily life.&nbsp;
-                            </td>
-                            <td style="">
-                              Dialysis is <em> <strong>not</strong> </em> likely to make you feel better. The side effects and burden of dialysis may even lower your quality of life.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="">
-                              <strong>
-                                Symptoms
-                              </strong>
-                            </td>
-                            <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
-                              Symptoms are common with kidney failure. &nbsp;The severity of symptoms tend to remain stable with CKM until the last month of life when they may increase. These symptoms can be treated and aggressive symptom management will be a part of your CKM care.
-                            </td>
-                            <td style="">
-                              Symptoms are common with kidney failure. The severity of symptoms will likely <em> <strong>not</strong> </em> improve with dialysis. The dialysis procedure may cause or worsen some symptoms such as muscle cramping and fatigue.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="">
-                              <strong>Function
-                              </strong>
-                            </td>
-                            <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
-                              Your level of physical function will likely be relatively stable until the last 1-2 months of life.
-                            </td>
-                            <td style="">
-                              People in a nursing home or with poor physical function do poorly on dialysis and can lose physical function rapidly after starting dialysis. Only 13% of people living in a nursing home maintain their level of function after 1 year on dialysis.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="">
-                              <strong>
-                                Survival
-                              </strong>
-                            </td>
-                            <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
-                              Your life span will likely be the same with CKM than with dialysis. Some people like you may actually live longer with CKM, especially if your kidney function is quite stable.
-                            </td>
-                            <td style="">
-                              <div>
-                                Dialysis is unlikely to keep you alive longer than if you had CKM. Dialysis may actually hasten death.
-                              </div>
-                              <div>
-                                <img  style="margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;border:1px solid black;" alt="" src="/assets/images/image.jpg" border="1" vspace="0" hspace="0">
-                              </div>
-                              <p>
-                                Estimated probability of dying within 6 months after starting dialysis:16%*
-                              </p>
-                              <p>
-                                <font size="2">
-                                  <em>
-                                    *Note: calculated from nearly 70,000 kidney failure patients age 67 years or older who started dialysis
-                                  </em>
-                                </font>
-                              </p>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+            <div name="exportthis">
+              <div class="table-responsive" id="myPrognosisDiv">
+                <p class="tableHeader">
+                  My Prognosis:
+                </p>
+                <p>
+                  <em>
+                    How long you live and how you will feel is based on your age and overall health as indicated on the survey:
+                  </em>
+                </p>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-condensed" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th style="" scope="col">
+                          &nbsp;
+                        </th>
+                        <th style="" scope="col">
+                          <strong>
+                            Conservative Kidney Management (CKM)
+                          </strong>
+                          <br>
+                          No dialysis or transplant
+                        </th>
+                        <th style="" scope="col">
+                          <strong>
+                            Dialysis
+                          </strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="">
+                          <strong>
+                            Quality of Life
+                          </strong>
+                        </td>
+                        <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
+                          Quality of life is anticipated to remain stable until the last 1-2 months of life. At that time you are likely to feel more weak and may lose interest in the details of daily life.&nbsp;
+                        </td>
+                        <td style="">
+                          Dialysis is <em> <strong>not</strong> </em> likely to make you feel better. The side effects and burden of dialysis may even lower your quality of life.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="">
+                          <strong>
+                            Symptoms
+                          </strong>
+                        </td>
+                        <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
+                          Symptoms are common with kidney failure. &nbsp;The severity of symptoms tend to remain stable with CKM until the last month of life when they may increase. These symptoms can be treated and aggressive symptom management will be a part of your CKM care.
+                        </td>
+                        <td style="">
+                          Symptoms are common with kidney failure. The severity of symptoms will likely <em> <strong>not</strong> </em> improve with dialysis. The dialysis procedure may cause or worsen some symptoms such as muscle cramping and fatigue.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="">
+                          <strong>Function
+                          </strong>
+                        </td>
+                        <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
+                          Your level of physical function will likely be relatively stable until the last 1-2 months of life.
+                        </td>
+                        <td style="">
+                          People in a nursing home or with poor physical function do poorly on dialysis and can lose physical function rapidly after starting dialysis. Only 13% of people living in a nursing home maintain their level of function after 1 year on dialysis.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="">
+                          <strong>
+                            Survival
+                          </strong>
+                        </td>
+                        <td style="background-color: rgb(219, 255, 255); border-color: rgb(0, 255, 255);">
+                          Your life span will likely be the same with CKM than with dialysis. Some people like you may actually live longer with CKM, especially if your kidney function is quite stable.
+                        </td>
+                        <td style="">
+                          <div>
+                            Dialysis is unlikely to keep you alive longer than if you had CKM. Dialysis may actually hasten death.
+                          </div>
+                          <div>
+                            <img  style="margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;border:1px solid black;" alt="" src="/assets/images/image.jpg" border="1" vspace="0" hspace="0">
+                          </div>
+                          <p>
+                            Estimated probability of dying within 6 months after starting dialysis:16%*
+                          </p>
+                          <p>
+                            <font size="2">
+                              <em>
+                                *Note: calculated from nearly 70,000 kidney failure patients age 67 years or older who started dialysis
+                              </em>
+                            </font>
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
