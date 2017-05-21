@@ -557,20 +557,66 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="panel panel-default">
-                <div class="panel-heading innerPanelLabel">
+              <hr>
+                <div class="panelTitle">
+                  <p>
                   Additional Considerations
+                </p>
+                &nbsp;
                 </div>
-                <div class="panel-body">
                   <p class=""><strong><em> <i>
                     Your personal feelings are just as important as the medical facts. You can use the following section to think about what else matters to you in this decision, and record how you feel about the following statements.
                   </i> </em> </strong>
                 </p>
-                <p class="additionalQuestion"> Write! </p>
-                <textarea class="form-control" rows="3"></textarea>
+                &nbsp;
+                <p class="additionalQuestion">
+                  <em> <strong> 1. Are there other important factors to consider? </strong> </em> <i> (example: important milestones, spiritual or cultural beliefs) </i>
+                </p>
+                <textarea class="form-control" rows="3" id="otherFactorsToConsider"></textarea>
+                &nbsp;
 
-              </div>
-            </div>
+                <p class="additionalQuestion">
+                  <em> <strong> 2. Do you feel you know enough about your options? </strong> </em>
+                </p>
+                <div class="table-responsive" id="treatmentOptionsDiv">
+                  <table class="table table-condensed table-bordered">
+                    <thead class="tableHead">
+                      <tr>
+                        <th scope="col">
+                          <strong>
+                            My Reasons for Conservative Care
+                          </strong>
+                        </th>
+                        <th rowspan="1" colspan="2" scope="col">
+                          <strong>
+                            My Reasons for Dialysis
+                          </strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2" colspan="1">
+                          <textarea class="form-control" rows="3" id="reasonsForConservativeCare"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2" colspan="1">
+                          <textarea class="form-control" rows="3" id="reasonsForDialysis"></textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  &nbsp;
+
+                  <p class="additionalQuestion">
+                    <em> <strong> 3. Which option do you think you would prefer? </strong> </em>
+                  </p>
+                  <div class="radio">
+                    <div *ngFor="let ans of ['Definetly CKM', 'Probably CKM', 'Unsure', 'Probably Dialysis', 'Definitely Dialysis']">
+                      <label><input type="radio" name="optradio">{{ans}}</label>
+                    </div>
+                  </div>
           </div>
         </div>
       </div>
