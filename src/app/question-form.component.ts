@@ -4,7 +4,7 @@ import { AccordionContent } from './accordionContent';
 import { Interpreter } from './interpreter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 declare let pdfMake: any;
-declare let html2canvas: any;
+declare let domtoimage: any;
 import {
   trigger,
   state,
@@ -131,19 +131,28 @@ export class QuestionFormComponent {
     var loadingButton = <HTMLInputElement> document.getElementById('loadingButton');
     loadingButton.disabled = true;
     loadingButton.innerHTML = "Loading...";
-    html2canvas(document.getElementById('exportthis'), {
-      onrendered: function (canvas : any) {
-        var data = canvas.toDataURL();
-        var docDefinition = {
-          content: [{
-            image: data,
-            width: 500,
-          }]
-        };
-        pdfMake.createPdf(docDefinition).download("Score_Details.pdf");
-        loadingButton.disabled = false;
-        loadingButton.innerHTML = "Download";
-      }
+    var domsToPicify = new Array();
+    Array.prototype.forEach.call(document.getElementsByName("exportthis"), function(element: any) {
+      domsToPicify.push(
+        domtoimage.toJpeg(element, {bgcolor: "white"}).then(function(dataUrl: any) { return dataUrl; })
+      );
+    });
+
+    Promise.all(domsToPicify).then(values => {
+      var content = new Array();
+      values.forEach(function(data) {
+        content.push({
+          image: data,
+          width: 510,
+        });
+      });
+      var docDefinition = {
+        content: content
+      };
+      pdfMake.createPdf(docDefinition).download("Score_Details2.pdf");
+      var loadingButton = <HTMLInputElement> document.getElementById('loadingButton');
+      loadingButton.disabled = false;
+      loadingButton.innerHTML = "Download";
     });
   }
 

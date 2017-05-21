@@ -35,10 +35,15 @@
 }
 
 .panelTitle {
-  font-size: 18px;
+  font-size: 24px;
   letter-spacing: 1px;
   font-weight: 900;
   color: #533155;
+}
+
+.highlight {
+  background-color: rgb(219, 255, 255);
+  border-color: rgb(0, 255, 255);
 }
 
 .questionLabel {
@@ -54,6 +59,13 @@
 
 .innerPanelLabel {
   font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #533155;
+}
+
+.tableHeader {
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 900;
   color: #533155;
