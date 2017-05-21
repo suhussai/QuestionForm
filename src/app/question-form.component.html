@@ -555,7 +555,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" name="exportthis">
             <div class="col-md-12">
               <hr>
                 <div class="panelTitle">
@@ -607,6 +607,7 @@
                       </tr>
                     </tbody>
                   </table>
+                </div>
                   &nbsp;
 
                   <p class="additionalQuestion">
@@ -614,7 +615,7 @@
                   </p>
                   <div class="radio">
                     <div *ngFor="let ans of ['Definetly CKM', 'Probably CKM', 'Unsure', 'Probably Dialysis', 'Definitely Dialysis']">
-                      <label><input type="radio" name="optradio">{{ans}}</label>
+                      <label><input type="radio" name="ans_3">{{ans}}</label>
                     </div>
                   </div>
                   &nbsp;
@@ -635,16 +636,17 @@
                           </tr>
                       </tbody>
                     </table>
+                  </div>
                     &nbsp;
 
                     <p class="additionalQuestion">
                       <em> <strong> 5. I’m ready to take action: </strong> </em>
                     </p>
                     <div class="radio">
-                        <label><input type="radio" name="optradio">Yes</label>
+                        <label><input type="radio" name="ans_5">Yes</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="optradio">No</label>
+                        <label><input type="radio" name="ans_5">No</label>
                     </div>
                     &nbsp;
 
@@ -652,10 +654,10 @@
                       <em> <strong> 6. I want to learn more about my options: </strong> </em>
                     </p>
                     <div class="radio">
-                        <label><input type="radio" name="optradio">Yes</label>
+                        <label><input type="radio" name="ans_6">Yes</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="optradio">No</label>
+                        <label><input type="radio" name="ans_6">No</label>
                     </div>
                     &nbsp;
 
