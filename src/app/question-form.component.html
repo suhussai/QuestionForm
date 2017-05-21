@@ -160,7 +160,7 @@
                 </p>
                 <div class="table-responsive">
                   <table class="table table-bordered table-condensed" style="width: 100%;">
-                    <thead>
+                    <thead class="tableHead">
                       <tr>
                         <th style="" scope="col">
                           &nbsp;
@@ -264,15 +264,15 @@
                   </em>
                 </p>
                 <table class="table table-bordered table-condensed" style="width: 100%;">
-                  <thead>
+                  <thead class="tableHead">
                     <tr>
                       <th scope="col">&nbsp;</th>
                       <th scope="col"><strong>Conservative Kidney Management (CKM)</strong><br>
                         No dialysis or transplant</th>
                         <th colspan="2" rowspan="1" scope="col"><strong>Dialysis</strong></th>
-                      </tr>
-                    </thead>
-                    <tbody>
+                    </tr>
+                  </thead>
+                  <tbody>
                       <tr>
                         <td>
                           <strong>
@@ -389,6 +389,169 @@
                     </table>
                   </div>
                 </div>
+                <ngb-accordion #acc="ngbAccordion">
+                  <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                      <div class="accordionsTitle">
+                        Other Frequently Asked Questions
+                      </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                      <div class="table-responsive">
+                        <table class="table table-bordered" style="width: 100%;">
+                          <thead class="tableHead">
+                            <tr>
+                              <th scope="col">
+                                &nbsp;
+                              </th>
+                              <th scope="col">
+                                <strong>Conservative Kidney Management (CKM)</strong>
+                                <br>
+                                <strong>No dialysis or transplant</strong>
+                              </th>
+                              <th colspan="2" rowspan="1" scope="col">
+                                <strong>Dialysis</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="1" rowspan="2">
+                                <strong>Are there side effects?</strong>
+                              </td>
+                              <td colspan="1" rowspan="2">
+                                You won’t have side effects or problems from dialysis.
+                              </td>
+                              <td colspan="2" rowspan="1">
+                                Dialysis risks include low blood pressure, muscle spasms, infections, abnormal heart rhythms and low levels of protein in the blood.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Peritoneal dialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                There are fewer problems with low blood pressure and muscle cramps compared to hemodialysis, but greater problems with low levels of protein in the blood.
+                              </td>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Hemodialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                Some people feel unwell during the dialysis treatment (4 hours) and most people feel tired and washed out for 6-8 hours after treatment. There are more problems with low blood pressure and muscle cramps than peritoneal dialysis.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="1" rowspan="2" style="background-color: rgb(242, 242, 242);">
+                                <strong>Who will do my treatment?</strong>
+                              </td>
+                              <td colspan="1" rowspan="2" style="background-color: rgb(242, 242, 242);">
+                                It is recommended that every 1-3 months you have a check-up with a doctor and/or other members of your care team to monitor your health. Community resources such as home care can be accessed for you.&nbsp; Between visits you can call your team with questions or concerns.
+                              </td>
+                              <td colspan="2" rowspan="1" style="background-color: rgb(242, 242, 242);">
+                                Between visits you can call the kidney care team. The team includes a kidney doctor (nephrologist), nurse, dietician and social worker.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="background-color: rgb(242, 242, 242);">
+                                <strong>
+                                  <u>
+                                    Peritoneal dialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                You will do your own treatment at home. You may need the help of family or friends.
+                              </td>
+                              <td style="background-color: rgb(242, 242, 242);">
+                                <strong>
+                                  <u>
+                                    Hemodialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                Specialized medical staff at the dialysis unit will do the treatment for you.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>
+                                  Will I need special training to do my treatment
+                                </b>
+                              </td>
+                              <td>
+                                You won’t need special training.
+                              </td>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Peritoneal dialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                You will need 1-2 weeks of training.
+                              </td>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Hemodialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                You won’t need special training.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="background-color: rgb(242, 242, 242);">
+                                <b>
+                                  Will I have food and fluid restrictions?
+                                </b>
+                              </td>
+                              <td style="background-color: rgb(242, 242, 242);">
+                                Your medical team will offer advice on diet and fluid intake. If you prefer not to change your eating and drinking habits, just let the team know.
+                              </td>
+                              <td colspan="2" rowspan="1" style="background-color: rgb(242, 242, 242);">
+                                You will have many food and fluid restrictions.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Will I need equipment and supplies to do this treatment?
+                                </b>
+                              </td>
+                              <td>
+                                Your medical team may recommend some home monitoring equipment such as a blood pressure machine, but it’s optional.
+                              </td>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Peritoneal dialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                Equipment and supplies are provided. You will need to have room in your home to store these supplies and equipment.
+                              </td>
+                              <td>
+                                <strong>
+                                  <u>
+                                    Hemodialysis
+                                  </u>
+                                </strong>
+                                <br>
+                                Treatments are done at dialysis units.&nbsp; They have all the necessary equipment and supplies.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </ng-template>
+                  </ngb-panel>
+                </ngb-accordion>
+                &nbsp;
               </div>
             </div>
           </div>
