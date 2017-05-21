@@ -596,13 +596,13 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td rowspan="2" colspan="1">
-                          <textarea class="form-control" rows="3" id="reasonsForConservativeCare"></textarea>
+                        <td width="50%" rowspan="2" colspan="1">
+                          <textarea class="form-control" rows="3" maxlength="200"></textarea>
                         </td>
                       </tr>
                       <tr>
-                        <td rowspan="2" colspan="1">
-                          <textarea class="form-control" rows="3" id="reasonsForDialysis"></textarea>
+                        <td width="50%" rowspan="2" colspan="1">
+                          <textarea class="form-control" rows="3" maxlength="200"></textarea>
                         </td>
                       </tr>
                     </tbody>
@@ -617,6 +617,27 @@
                       <label><input type="radio" name="optradio">{{ans}}</label>
                     </div>
                   </div>
+                  &nbsp;
+
+                  <p class="additionalQuestion">
+                    <em> <strong> 4. Do you want others to be involved in this decision? If so: </strong> </em>
+                  </p>
+                  <div class="table-responsive" id="treatmentOptionsDiv">
+                    <table class="table table-condensed table-bordered" style="width: 100%;">
+                      <tbody>
+                          <tr *ngFor="let ans of ['Who?', 'Which option does this person prefer?', 'Is this person pressuring you?', 'How can this person help you decide?']">
+                            <td width="30%" rowspan="1" colspan="1" class="tableHead">
+                              {{ans}}
+                            </td>
+                            <td width="70%" rowspan="1" colspan="1">
+                              <textarea class="form-control" rows="3" maxlength="200"></textarea>
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    &nbsp;
+
+
           </div>
         </div>
       </div>
